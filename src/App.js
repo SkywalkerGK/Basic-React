@@ -2,19 +2,20 @@ import './App.css';
 import AppHeader from './components/AppHeader';
 import TattooPost from './components/TattooPost';
 import Tattooitem from './components/Tattooitem';
+import tattoos from './components/data/tattoos';
 
 
 function App() {
+  const tattooElements = tattoos.map((tattoo,index) => {
+    return <Tattooitem key = {index} tattoo={tattoo} />
+  })
   return (
     <div className="App">
+
       <AppHeader />
       <div className='app-grid'>
-        <Tattooitem title='Docker' thumbnailUrl='/images/docker.png'/>
-        <Tattooitem title='Laravel' thumbnailUrl='/images/laravel.png'/>
-        <Tattooitem title='React' thumbnailUrl='/images/react.png'/>
-        <Tattooitem title='MySQL' thumbnailUrl='/images/mysql.png'/>
+        {tattooElements}
       </div>
-      
 
     </div>
   );
