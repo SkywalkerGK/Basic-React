@@ -1,11 +1,12 @@
 import './TattooPost.css';
-function TattooPost(){
+function TattooPost(props){
+    const { tattoo , onBgClick } = props;
     return(
         <div className="tattoo-post">
-            <div className="tattoo-post-bg" />
+            <div className="tattoo-post-bg" onClick={onBgClick} />
             <div className="tattoo-post-content">
-                <img src="/images/laravel.png" />
-                <h4>Laravel</h4>
+                <img src={tattoo.thumbnailUrl} />
+                <h4>{tattoo.title}</h4>
             </div>
         </div>
 
